@@ -1,0 +1,47 @@
+﻿<div class="container" style="padding-top:8rem">
+    <div class="row">
+    </div>
+    <div class="row">
+        <br />
+    </div>
+    <div class="row panel">
+        <form name="userForm">
+            <div class="twelve columns">
+                <div class="three columns">
+                    <!--<input type="text" id="searchTerm" name="searchTerm" placeholder="Ara..." ng-model="searchTerm" value="" class="textbox">-->
+                </div>
+                <hr>
+                <div class="row" style="padding-top:1rem">
+                    <div class="three columns">
+                        Food
+                    </div>
+                    <div class="six columns">
+                        <select ng-model="selectedFood" ng-options="f.name for f in food" style="width:170px;">
+                                    <option value="">Select food</option>
+                                </select>
+                    </div>
+                    <div class="two columns">
+                        <a class="uibutton" ng-click="add()">Add</a>
+                    </div>
+                </div>
+                <hr>
+            </div>
+           
+        </form>
+    </div>
+
+     <div class="row panel" dir-paginate="userFood in userFoods | itemsPerPage: pageSize">
+                <!--total-items="totalCount" >-->
+                <a href='#/food' class="panellink">
+                    <div class="row">
+                        <div class="row panelheading">
+                            {{userFood.food.name}}
+                        </div>
+                        <div class="row">
+                            &nbsp;
+                        </div>
+                    </div>
+                </a>
+              
+            </div>
+</div>

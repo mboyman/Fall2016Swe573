@@ -1,0 +1,138 @@
+﻿<div class="container">
+    <form action="/" method="post" ng-show="operation === 'login'">
+        <input name="__RequestVerificationToken" type="hidden" value="YARzgj_yuB9hctwZVYiH_ku3oKuxSkRnqed1w3zQMqbmXzcvQE9sqMg8hDQah715rLLqLX6c7AeO2A87iRGB-mu83ws7UKERncynaxwZGg81"
+        />
+        <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+            
+        </div>
+        <div class="row" ng-show="isAuth !== false">
+            <div class="four columns">
+                &nbsp;
+            </div>
+            <div class="four columns" style="text-align: center;">
+                <div class="row" style="text-align: center;">
+                    <div class="twelve columns panelbox" style="text-align: center; border-radius: 2px; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);">
+                        <div class="row" style="text-align: center; margin-top: 20px;">
+                        </div>
+                        <div class="row" style="text-align: center; margin-top: 20px;">
+                            <div class="twelve columns" style="text-align: center; padding-left: 20px; padding-right: 20px;">
+                                <input id="Email" name="Email" type="text" placeholder="Enter your user name" class="textbox" ng-model="username" style="padding-left:10px; height:44px; border-radius: 1px; border-width: 1px; border-style: solid; border-color: #C0C0C0 #D9D9D9 #D9D9D9; font-size: 16px;"
+                                />
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: center; margin-top: 20px;">
+                            <div class="twelve columns" style="text-align: center; padding-left: 20px; padding-right: 20px;">
+                                <input id="Password" name="Password" type="password" placeholder="Password" class="textbox" ng-model="password" style="padding-left: 10px; height:44px; border-radius: 1px; border-width: 1px; border-style: solid; border-color: #C0C0C0 #D9D9D9 #D9D9D9; font-size: 16px;"
+                                />
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: center; margin-top: 20px;">
+                            <div class="twelve columns" style="text-align: center; padding-left: 20px; padding-right: 20px;">
+                                <input value="Login" class="uibutton" ng-click="login()" style="font-weight: 700; color: #FFF; background-color: rgb(47,51,71)"
+                                />
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: center; margin-top: 20px;">
+                            <div class="twelve columns" style="text-align: center; padding-left: 20px; padding-right: 20px;">
+                                <a style="color: rgb(47,51,71);" href='#/login' ng-click="changeOperation()">Sign Up</a>
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: center; margin-top: 20px;">
+                            <div class="twelve columns" style="text-align: center; padding-left: 20px; padding-right: 20px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                &nbsp;
+            </div>
+        </div>
+    </form>
+    <form action="/" method="post" ng-show="operation === 'signup'">
+        <input name="__RequestVerificationToken" type="hidden" value="YARzgj_yuB9hctwZVYiH_ku3oKuxSkRnqed1w3zQMqbmXzcvQE9sqMg8hDQah715rLLqLX6c7AeO2A87iRGB-mu83ws7UKERncynaxwZGg81"
+        />
+        
+        <div class="row">
+            <div class="four columns">
+                &nbsp;
+            </div>
+            <div class="four columns" style="text-align: center;">
+                <div class="row" style="text-align: center;">
+                    <div class="twelve columns panelbox" style="text-align: center; border-radius: 2px; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);">
+                        <div class="row" style="text-align: center; margin-top: 20px; color:red">
+                            {{notify}}
+                        </div>
+                        <div class="row" style="text-align: center; margin-top: 20px;">
+                            <div class="twelve columns" style="text-align: center; padding-left: 20px; padding-right: 20px;">
+                                <input id="Email" name="Email" type="text" placeholder="Enter your username" class="textbox" ng-model="username" style="padding-left:10px; height:44px; border-radius: 1px; border-width: 1px; border-style: solid; border-color: #C0C0C0 #D9D9D9 #D9D9D9; font-size: 16px;"
+                                />
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: center; margin-top: 20px;">
+                            <div class="twelve columns" style="text-align: center; padding-left: 20px; padding-right: 20px;">
+                                <input id="Password" name="Password" type="password" placeholder="Password" class="textbox" ng-model="password" style="padding-left: 10px; height:44px; border-radius: 1px; border-width: 1px; border-style: solid; border-color: #C0C0C0 #D9D9D9 #D9D9D9; font-size: 16px;"
+                                />
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: center; margin-top: 20px;">
+                            <div class="twelve columns" style="text-align: center; padding-left: 20px; padding-right: 20px;">
+                                <input id="Password" name="Password" type="password" placeholder="Password" class="textbox" ng-model="password2" style="padding-left: 10px; height:44px; border-radius: 1px; border-width: 1px; border-style: solid; border-color: #C0C0C0 #D9D9D9 #D9D9D9; font-size: 16px;"
+                                />
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: center; margin-top: 20px;">
+                            <div class="twelve columns" style="text-align: center; padding-left: 20px; padding-right: 20px;">
+                                <input id="Email" name="Email" type="text" placeholder="Enter your name" class="textbox" ng-model="name" style="padding-left:10px; height:44px; border-radius: 1px; border-width: 1px; border-style: solid; border-color: #C0C0C0 #D9D9D9 #D9D9D9; font-size: 16px;"
+                                />
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: center; margin-top: 20px;">
+                            <div class="twelve columns" style="text-align: center; padding-left: 20px; padding-right: 20px;">
+                                <input id="Email" name="Email" type="text" placeholder="Enter your surname" class="textbox" ng-model="surname" style="padding-left:10px; height:44px; border-radius: 1px; border-width: 1px; border-style: solid; border-color: #C0C0C0 #D9D9D9 #D9D9D9; font-size: 16px;"
+                                />
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: center; margin-top: 20px; ma">
+                            <div class="twelve columns">
+                                <select ng-model="gender" ng-options="gen for gen in genders">
+                                    <option value="">Gender</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: center; margin-top: 20px;">
+                            <div class="twelve columns" style="text-align: center; padding-left: 20px; padding-right: 20px;">
+                                <input id="Email" name="Email" type="text" placeholder="Enter your height" class="textbox" ng-model="height" style="padding-left:10px; height:44px; border-radius: 1px; border-width: 1px; border-style: solid; border-color: #C0C0C0 #D9D9D9 #D9D9D9; font-size: 16px;"
+                                />
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: center; margin-top: 20px;">
+                            <div class="twelve columns" style="text-align: center; padding-left: 20px; padding-right: 20px;">
+                                <input id="Email" name="Email" type="text" placeholder="Enter your weight" class="textbox" ng-model="weight" style="padding-left:10px; height:44px; border-radius: 1px; border-width: 1px; border-style: solid; border-color: #C0C0C0 #D9D9D9 #D9D9D9; font-size: 16px;"
+                                />
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: center; margin-top: 20px;">
+                            <div class="twelve columns" style="text-align: center; padding-left: 20px; padding-right: 20px;">
+                                <input value="Sign Up" class="uibutton" ng-click="signup()" style="font-weight: 700; color: #FFF; background-color: rgb(47,51,71)"
+                                />
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: center; margin-top: 20px;">
+                            <div class="twelve columns" style="text-align: center; padding-left: 20px; padding-right: 20px;">
+                                <a style="color: rgb(47,51,71);" href="#/login" ng-click="changeOperation()">Login</a>
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: center; margin-top: 20px;">
+                            <div class="twelve columns" style="text-align: center; padding-left: 20px; padding-right: 20px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                &nbsp;
+            </div>
+        </div>
+    </form>
+</div>

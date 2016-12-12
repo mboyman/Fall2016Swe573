@@ -1,0 +1,1 @@
+npm install bower gulp gulp-bower gulp-print gulp-inject gulp-notify stream-series gulp-concat gulp-uglify gulp-ignore rimraf gulp-cssmin merge main-bower-files

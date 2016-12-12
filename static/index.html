@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html data-ng-app="SynapseApp">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <!--<base href="">-->
+
+    <title>Synapse</title>
+
+    <!--Google Maps-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWIORdoASrJx-UdujAiwIj3kap1BdMX_o&libraries=geometry"></script>
+
+    <!-- inject:css -->
+
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
+
+    <link rel="stylesheet" href="bower_components/pnotify/dist/pnotify.brighttheme.css">
+
+    <link rel="stylesheet" href="bower_components/pnotify/dist/pnotify.buttons.css">
+
+    <link rel="stylesheet" href="bower_components/pnotify/dist/pnotify.css">
+
+    <link rel="stylesheet" href="bower_components/pnotify/dist/pnotify.history.css">
+
+    <link rel="stylesheet" href="bower_components/pnotify/dist/pnotify.mobile.css">
+
+    <link rel="stylesheet" href="bower_components/intl-tel-input/build/css/intlTelInput.css">
+
+    <link rel="stylesheet" href="content/PagedList.css">
+
+    <link rel="stylesheet" href="content/normalize.css">
+
+    <link rel="stylesheet" href="content/site.css">
+
+    <link rel="stylesheet" href="content/styles.css">
+
+    <link rel="stylesheet" href="libraries/Kendo/kendo.css">
+
+    <link rel="stylesheet" href="libraries/Kendo/kendo_002.css">
+
+    <link rel="stylesheet" href="libraries/Kendo/kendo_003.css">
+
+    <link rel="stylesheet" href="libraries/Kendo/kendo_004.css">
+
+    <link rel="stylesheet" href="libraries/Kendo/kendo_005.css">
+
+    <!-- endinject -->
+
+</head>
+<body ng-controller="indexController">
+
+    <!-- Header-->
+    <header>
+        <div class="container">
+            <div class="row" style="padding-top:0.5rem;margin-bottom:0">
+                
+                <div ng-cloak >
+                    <div class="three columns"> &nbsp; </div>
+                    <div class="one columns"><a href="#/home"><div class="headerbutton" >Home</div></a></div>
+                    <div class="one columns"><a href="#/food"><div class="headerbutton">Food</div></a></div>
+                    <div class="one half columns" ><a href="#/exercises"><div class="headerbutton">Exercises</div></a></div>
+                    <!--<div class="one half columns"><a href="#/account"><div class="headerbutton">My Account</div></a></div>-->
+                    <div class="one columns"><a href="#/auth/logout"><div class="headerbutton">Logout</div></a></div>
+                </div>
+               
+            </div>
+        </div>
+    </header>
+
+    <!-- Main section -->
+    <div data-ng-view=""></div>
+
+    <!-- inject:js -->
+ 
+    <script src="bower_components/jquery/jquery.js"></script>
+ 
+    <script src="bower_components/angular/angular.js"></script>
+ 
+    <script src="bower_components/angular-route/angular-route.js"></script>
+ 
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+ 
+    <script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
+ 
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+ 
+    <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+ 
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+ 
+    <script src="bower_components/blob-polyfill/Blob.js"></script>
+ 
+    <script src="bower_components/file-saver.js/FileSaver.js"></script>
+ 
+    <script src="bower_components/jquery-validation/dist/jquery.validate.js"></script>
+ 
+    <script src="bower_components/underscore/underscore.js"></script>
+ 
+    <script src="bower_components/respond/dest/respond.src.js"></script>
+ 
+    <script src="bower_components/heatmap.js/src/heatmap.js"></script>
+ 
+    <script src="bower_components/pnotify/dist/pnotify.js"></script>
+ 
+    <script src="bower_components/pnotify/dist/pnotify.confirm.js"></script>
+ 
+    <script src="bower_components/moment/moment.js"></script>
+ 
+    <script src="bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
+ 
+    <script src="bower_components/intl-tel-input/build/js/intlTelInput.min.js"></script>
+ 
+    <script src="bower_components/intl-tel-input/lib/libphonenumber/build/utils.js"></script>
+ 
+    <script src="bower_components/pdfkit/pdfkit-0.7.1.js"></script>
+ 
+    <script src="bower_components/pdfkit/blob-stream-v0.1.3.js"></script>
+ 
+    <script src="bower_components/angular-file-saver/dist/angular-file-saver.bundle.js"></script>
+ 
+    <script src="bower_components/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+ 
+    <script src="bower_components/ng-intl-tel-input/dist/ng-intl-tel-input.js"></script>
+ 
+    <script src="libraries/Kendo/kendo.all.min.js"></script>
+ 
+    <script src="app.js"></script>
+ 
+    <script src="libraries/custom/KendoHelper.js"></script>
+ 
+    <script src="factories/appInterceptorFactory.js"></script>
+ 
+    <script src="factories/dataFactory.js"></script>
+ 
+    <script src="factories/errorFactory.js"></script>
+ 
+    <script src="factories/notificationFactory.js"></script>
+ 
+    <script src="filters/dateFilter.js"></script>
+ 
+    <script src="filters/deviceFilter.js"></script>
+ 
+    <script src="filters/deviceTypeFilter.js"></script>
+ 
+    <script src="filters/signalStrengthFilter.js"></script>
+ 
+    <script src="filters/userRoleFilter.js"></script>
+ 
+    <script src="controllers/foodController.js"></script>
+ 
+    <script src="controllers/homeController.js"></script>
+ 
+    <script src="controllers/indexController.js"></script>
+ 
+    <script src="controllers/loginController.js"></script>
+ 
+    <script src="controllers/logoutController.js"></script>
+ 
+    <!-- endinject -->
+
+</body>
+</html>
