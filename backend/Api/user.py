@@ -14,7 +14,7 @@ api_key = 'mGKWC6iiQy5XABlrCzmJp5Qpyw6HUPByfnu2AT1I'
 
 def getUser(username):
     jsonFile = 'Api/users.json'
-    with open(jsonFile) as data_file:    
+    with open(jsonFile, encoding='utf-8') as data_file:    
         users = json.load(data_file) 
     for u in users:
         if u['username'] == username:
@@ -23,7 +23,7 @@ def getUser(username):
 
 def getExercises():
     jsonFile = 'Api/Exercises.json'
-    with open(jsonFile) as data_file:    
+    with open(jsonFile, encoding='utf-8') as data_file:    
         exercises = json.load(data_file)    
     return exercises
 
@@ -36,7 +36,7 @@ def getFood(q):
 def getUsersFood(username):
     jsonFile = 'Api/user_food.json'
     user_food = []
-    with open(jsonFile) as data_file:    
+    with open(jsonFile, encoding='utf-8') as data_file:    
         user_food = json.load(data_file) 
     users_food_list =[]
     for uf in user_food:
@@ -47,7 +47,7 @@ def getUsersFood(username):
 def getUsersExercises(username):
     jsonFile = 'Api/user_exercise.json'
     exercises = []
-    with open(jsonFile) as data_file:    
+    with open(jsonFile, encoding='utf-8') as data_file:    
         exercises = json.load(data_file) 
     user_exercise_list =[]
     for ex in exercises:
@@ -64,19 +64,19 @@ def getFoodNutrients(q):
 def addFoodToUser(userFood):
     jsonFile = 'Api/user_food.json'
     user_food = []
-    with open(jsonFile) as data_file:    
+    with open(jsonFile, encoding='utf-8') as data_file:    
         user_food = json.load(data_file)   
     user_food.append(userFood)
-    with open(jsonFile, 'w') as outfile:
+    with open(jsonFile, 'w', encoding='utf-8') as outfile:
         json.dump(user_food, outfile)
 
 def addExerciseToUser(ex):
     jsonFile = 'Api/user_exercise.json'
     user_exercise = []
-    with open(jsonFile) as data_file:    
+    with open(jsonFile, encoding='utf-8') as data_file:    
         user_exercise = json.load(data_file)   
     user_exercise.append(ex)
-    with open(jsonFile, 'w') as outfile:
+    with open(jsonFile, 'w', encoding='utf-8') as outfile:
         json.dump(user_exercise, outfile)
     
 @post(prefix + '/user/login')
@@ -84,7 +84,7 @@ def addExerciseToUser(ex):
 def get_users():
     try:
         jsonFile = 'Api/users.json'
-        with open(jsonFile) as data_file:    
+        with open(jsonFile, encoding='utf-8') as data_file:    
             users = json.load(data_file) 
         for u in users:
             if u['username'] == request.json['username']:
@@ -111,14 +111,14 @@ def logout():
 def get_users():
     try:
         jsonFile = 'Api/users.json'
-        with open(jsonFile) as data_file:    
+        with open(jsonFile, encoding='utf-8') as data_file:    
             users = json.load(data_file) 
         for u in users:
             if u['username'] == request.json['username']:
                 return {'success': False, 'message': 'user exists'}     
         
         users.append(request.json)
-        with open(jsonFile, 'w') as outfile:
+        with open(jsonFile, 'w', encoding='utf-8') as outfile:
             json.dump(users, outfile)
         response.set_cookie(request.json['username'], 'signed', path='/', domain=request.urlparts.hostname)
 
