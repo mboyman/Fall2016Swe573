@@ -1,0 +1,27 @@
+﻿<div class="container" style="padding-top:8rem" ng-show="foodNutrient">
+    <div class="row panel">
+        <div class="twelve columns">
+            <div class="row panelheading">
+                <div class="eight columns">
+                    {{foodNutrient.food.name}}
+                </div>
+                <div class="two columns" >
+                    <a class="uibutton" ng-click="add(foodNutrient.food)">Add</a>
+                </div>
+            </div>
+            <div class="row" dir-paginate="nut in foodNutrient.food.nutrients | itemsPerPage: pageSize">
+                <div class="two columns">
+                    &nbsp
+                </div>
+                <div class="two columns">
+                    {{nut.name}}:
+                </div>
+                <div class="eight columns">
+                    <div class="eight columns" style="color: red">
+                        {{nut.value}} {{nut.unit}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

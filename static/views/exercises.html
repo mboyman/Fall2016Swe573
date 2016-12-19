@@ -1,0 +1,46 @@
+﻿<div class="container" style="padding-top:8rem">
+    <div class="row">
+    </div>
+    <div class="row">
+        <br />
+    </div>
+    <div class="row panel">
+        <form name="userForm">
+            <div class="twelve columns">
+                <hr>
+                <div class="row" style="padding-top:1rem">
+                    <div class="one columns">
+                        Food
+                    </div>
+                    <div class="three columns">
+                        <select ng-model="selectedExercise" ng-options="ex.key for ex in exercises" style="width:170px;">
+                                <option value="">Select exercise</option>
+                            </select>
+                    </div>
+                    <div class="two columns">
+                        <a class="uibutton" ng-click="add()">Add</a>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </form>
+    </div>
+
+    <div class="row panel" dir-paginate="ex in userExercises | itemsPerPage: pageSize">
+        <!--total-items="totalCount" >-->
+        
+            <div class="row">
+                <div class="row panelheading">
+                    
+                    <div class="six columns">
+                        {{ex.exercise.key}}
+                    </div>
+                    <div class="two columns">
+                        {{ex.exercise.cal}}
+                    </div>
+                </div>
+                
+            </div>
+       
+    </div>
+</div>

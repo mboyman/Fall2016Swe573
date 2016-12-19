@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html data-ng-app="SynapseApp">
+<html data-ng-app="DietApp">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width">
     <!--<base href="">-->
 
-    <title>Synapse</title>
+    <title>DietApp</title>
 
     <!--Google Maps-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWIORdoASrJx-UdujAiwIj3kap1BdMX_o&libraries=geometry"></script>
@@ -58,9 +58,10 @@
                     <div class="three columns"> &nbsp; </div>
                     <div class="one columns"><a href="#/home"><div class="headerbutton" >Home</div></a></div>
                     <div class="one columns"><a href="#/food"><div class="headerbutton">Food</div></a></div>
+                    <div class="one columns"><a href="#/myfood"><div class="headerbutton">My Food</div></a></div>
                     <div class="one half columns" ><a href="#/exercises"><div class="headerbutton">Exercises</div></a></div>
                     <!--<div class="one half columns"><a href="#/account"><div class="headerbutton">My Account</div></a></div>-->
-                    <div class="one columns"><a href="#/auth/logout"><div class="headerbutton">Logout</div></a></div>
+                    <div class="one columns"><a href="javascript:void(null);"><div class="headerbutton" ng-click="logout()">Logout</div></a></div>
                 </div>
                
             </div>
@@ -146,7 +147,11 @@
  
     <script src="filters/userRoleFilter.js"></script>
  
+    <script src="controllers/exercisesController.js"></script>
+ 
     <script src="controllers/foodController.js"></script>
+ 
+    <script src="controllers/foodDetailsController.js"></script>
  
     <script src="controllers/homeController.js"></script>
  
@@ -155,6 +160,8 @@
     <script src="controllers/loginController.js"></script>
  
     <script src="controllers/logoutController.js"></script>
+ 
+    <script src="controllers/myfoodController.js"></script>
  
     <!-- endinject -->
 

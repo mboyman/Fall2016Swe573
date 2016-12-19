@@ -1,4 +1,4 @@
-﻿var app = angular.module("SynapseApp", ['ngRoute', 'angularUtils.directives.dirPagination', 'angular-loading-bar', 'kendo.directives', 'ngFileSaver', 'pascalprecht.translate', 'ngSanitize', 'ngIntlTelInput']);
+﻿var app = angular.module("DietApp", ['ngRoute', 'angularUtils.directives.dirPagination', 'angular-loading-bar', 'kendo.directives', 'ngFileSaver', 'pascalprecht.translate', 'ngSanitize', 'ngIntlTelInput']);
 
 app.config(["$routeProvider", "$httpProvider", "$translateProvider", "$locationProvider", "ngIntlTelInputProvider", function ($routeProvider, $httpProvider, $translateProvider, $locationProvider, ngIntlTelInputProvider) {
     //$httpProvider.defaults.useXDomain = true;
@@ -6,37 +6,50 @@ app.config(["$routeProvider", "$httpProvider", "$translateProvider", "$locationP
     //Home
     $routeProvider.when("/home", {
         controller: "homeController",
-        templateUrl: "Views/home.html"
+        templateUrl: "views/home.html"
     });
 
     //User
     $routeProvider.when("/food", {
         controller: "foodController",
-        templateUrl: "Views/food.html"
+        templateUrl: "views/food.html"
+    });
+
+    $routeProvider.when("/fooddetails/:id", {
+        controller: "foodDetailsController",
+        templateUrl: "views/foodDetails.html"
+    });
+
+    $routeProvider.when("/myfood", {
+        controller: "myfoodController",
+        templateUrl: "views/myfood.html"
     });
 
     $routeProvider.when("/exercises", {
         controller: "exercisesController",
-        templateUrl: "Views/exercises.html"
+        templateUrl: "views/exercises.html"
     });
+
 
     // login
     $routeProvider.when("/login", {
         controller: "loginController",
-        templateUrl: "Views/login.html"
+        templateUrl: "views/login.html"
     });
 
     //logout
     $routeProvider.when("/auth/logout/", {
         controller: "logoutController",
-        templateUrl: "Views/account.html"
+        templateUrl: "views/account.html"
     });
 
-    $routeProvider.otherwise({ redirectTo: "/home" });
+    $routeProvider.otherwise({
+        redirectTo: "/home"
+    });
 
     $httpProvider.interceptors.push('appInterceptor');
 
-   
+
 
 }]).run(["$rootScope", "$location", "$q", function ($rootScope, $location, $q) {
     //console.log('$rootScope Geldi');

@@ -7,41 +7,48 @@
     <div class="row panel">
         <form name="userForm">
             <div class="twelve columns">
-                <div class="three columns">
-                    <!--<input type="text" id="searchTerm" name="searchTerm" placeholder="Ara..." ng-model="searchTerm" value="" class="textbox">-->
-                </div>
                 <hr>
                 <div class="row" style="padding-top:1rem">
-                    <div class="three columns">
+                    <div class="one columns">
                         Food
                     </div>
-                    <div class="six columns">
-                        <select ng-model="selectedFood" ng-options="f.name for f in food" style="width:170px;">
-                                    <option value="">Select food</option>
-                                </select>
+                    <div class="three columns">
+                        <input type="text" id="searchTerm" name="searchTerm" placeholder="Search..." ng-model="searchTerm" value="" class="textbox">
                     </div>
                     <div class="two columns">
-                        <a class="uibutton" ng-click="add()">Add</a>
+                        <a class="uibutton" ng-click="search()">Search</a>
                     </div>
                 </div>
                 <hr>
             </div>
-           
         </form>
     </div>
-
-     <div class="row panel" dir-paginate="userFood in userFoods | itemsPerPage: pageSize">
-                <!--total-items="totalCount" >-->
-                <a href='#/food' class="panellink">
-                    <div class="row">
-                        <div class="row panelheading">
-                            {{userFood.food.name}}
-                        </div>
-                        <div class="row">
-                            &nbsp;
-                        </div>
+    <div class="row panel" dir-paginate="food in foodList.item | itemsPerPage: pageSize">
+        <!--total-items="totalCount" >-->
+        <a href='#/fooddetails/{{food.ndbno}}' class="panellink">
+            <div class="row">
+                <div class="row panelheading">
+                    <div class="eight columns">
+                        {{food.name}}
                     </div>
-                </a>
-              
+                    <!--<div class="two columns">
+                        <a class="uibutton" ng-click="add(food)">Add</a>
+                    </div>-->
+                </div>
             </div>
+        </a>
+    </div>
+    <!--<div class="row panel" dir-paginate="userFood in userFoods | itemsPerPage: pageSize">
+        total-items="totalCount" >
+        <a href='#/food' class="panellink">
+            <div class="row">
+                <div class="row panelheading">
+                    {{userFood.food.name}}
+                </div>
+                <div class="row">
+                    &nbsp;
+                </div>
+            </div>
+        </a>
+    </div>-->
 </div>

@@ -1,5 +1,5 @@
 ﻿'use strict';
-app.controller("foodController", ["$scope", "$http", "$location", "$q", "dataFactory", "notificationFactory", function ($scope, $http, $location, $q, dataFactory, notificationFactory) {
+app.controller("myfoodController", ["$scope", "$http", "$location", "$q", "dataFactory", "notificationFactory", function ($scope, $http, $location, $q, dataFactory, notificationFactory) {
 
     var apiUrl = '/backend/Api/';
     $scope.userFoods = [];

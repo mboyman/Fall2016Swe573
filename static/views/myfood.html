@@ -1,0 +1,21 @@
+﻿<div class="container" style="padding-top:8rem">
+    <div class="row">
+    </div>
+    <div class="row">
+        <br />
+    </div>
+   
+    <div class="row panel" dir-paginate="userFood in userFoods | itemsPerPage: pageSize">
+        <!--total-items="totalCount" >-->
+        <a href='#/fooddetails/{{userFood.food.ndbno}}' class="panellink">
+            <div class="row">
+                <div class="row panelheading">
+                    {{userFood.food.name}}
+                </div>
+                <div class="row">
+                    &nbsp;
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
